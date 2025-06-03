@@ -1,6 +1,6 @@
 // Project Discovery Service
 // This service handles fetching and analyzing projects from various platforms
-// Last updated: 2024
+// Last updated: 2025
 
 import { UserPreferences, Project, ProjectDiscoveryResult, ApiError } from '../types';
 import { CHARACTERISTICS_OPTIONS, PLATFORM_OPTIONS } from '../constants';
