@@ -1,6 +1,6 @@
 // User Input Form Component
 // Handles user preferences and search criteria
-// Last updated: 2024
+// Last updated: 2025
 
 import React, { useState, useEffect } from 'react';
 import { UserPreferences, CharacteristicOption } from '../types'; 
