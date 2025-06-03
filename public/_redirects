@@ -1,0 +1,8 @@
+# Redirect all requests to index.html for SPA routing
+/* /index.html 200
+
+# Redirect www to non-www
+https://www.devdiscovery-ai.com/* https://devdiscovery-ai.com/:splat 301!
+
+# Redirect HTTP to HTTPS
+http://devdiscovery-ai.com/* https://devdiscovery-ai.com/:splat 301! 
