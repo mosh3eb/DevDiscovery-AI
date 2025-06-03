@@ -1,3 +1,7 @@
+// Project Analytics Service
+// This service handles project metrics and analysis
+// Last updated: 2024
+
 import { Project, ProjectHealthScore, ProjectComparison } from '../types';
 
 export const calculateProjectHealthScore = async (project: Project): Promise<ProjectHealthScore> => {
