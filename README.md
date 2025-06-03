@@ -85,12 +85,12 @@ A powerful AI-driven platform that helps developers discover and evaluate open-s
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/devdiscovery-ai.git
+git clone https://github.com/mosh3eb/DevDiscovery-AI.git
 ```
 
 2. Install dependencies
 ```bash
-cd devdiscovery-ai
+cd DevDiscovery-AI
 npm install
 ```
 
@@ -211,4 +211,4 @@ Thanks to all the open-source projects and communities that make this tool possi
 
 ---
 
-Made with ❤️ by Mosh3eb
+Made with ❤️ by [Mosh3eb](https://github.com/mosh3eb)
