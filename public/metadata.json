@@ -5,67 +5,6 @@
   "author": "Mosh3eb",
   "robots": "index, follow",
   "language": "en",
-  "revisit-after": "7 days",
   "viewport": "width=device-width, initial-scale=1",
-  "theme-color": "#1a1a1a",
-  "og": {
-    "type": "website",
-    "title": "DevDiscovery AI - Smart Open Source Project Discovery",
-    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms."
-  },
-  "twitter": {
-    "card": "summary",
-    "title": "DevDiscovery AI - Smart Open Source Project Discovery",
-    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms."
-  },
-  "icons": {
-    "favicon": "/favicon.ico",
-    "apple-touch-icon": "/apple-touch-icon.png",
-    "sizes": {
-      "16": "/icons/icon-16x16.png",
-      "32": "/icons/icon-32x32.png",
-      "192": "/icons/icon-192x192.png",
-      "512": "/icons/icon-512x512.png"
-    }
-  },
-  "manifest": {
-    "name": "DevDiscovery AI",
-    "short_name": "DevDiscovery",
-    "description": "AI-powered platform for discovering and evaluating open-source projects",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#1a1a1a",
-    "theme_color": "#1a1a1a",
-    "icons": [
-      {
-        "src": "/icons/icon-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/icons/icon-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ]
-  },
-  "structured-data": {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "DevDiscovery AI",
-    "description": "AI-powered platform for discovering and evaluating open-source projects",
-    "url": "https://devdiscovery-ai.com",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Mosh3eb",
-      "url": "https://github.com/mosh3eb"
-    }
-  }
+  "theme-color": "#1a1a1a"
 } 
