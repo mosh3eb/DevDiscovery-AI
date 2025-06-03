@@ -1,4 +1,4 @@
-import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
+import { GoogleGenerativeAI, GenerateContentResult } from "@google/generative-ai";
 import { UserPreferences, Project } from '../types';
 import { CHARACTERISTICS_OPTIONS } from '../constants';
 
@@ -50,7 +50,7 @@ const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platfo
     console.error("GEMINI_API_KEY environment variable is not set.");
     throw new Error("AI service is not configured (API key missing).");
   }
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
   const characteristicsString = preferences.characteristics
     .map(id => CHARACTERISTICS_OPTIONS.find(c => c.id === id)?.label)
@@ -102,18 +102,17 @@ const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platfo
     Return ONLY the JSON array. Do not include any other text.
   `;
 
-  let geminiApiResponse: GenerateContentResponse | undefined;
+  let geminiApiResponse: GenerateContentResult | undefined;
 
   try {
-    geminiApiResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash-preview-04-17',
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-      }
-    });
+    const model = ai.getGenerativeModel({ model: 'gemini-pro' });
+    geminiApiResponse = await model.generateContent(prompt);
 
-    let jsonStr = geminiApiResponse?.text?.trim() || '';
+    if (!geminiApiResponse) {
+      throw new Error("No response from AI model");
+    }
+
+    let jsonStr = geminiApiResponse.response.text()?.trim() || '';
     console.log('Raw AI response:', jsonStr);
 
     // Extract JSON array if it's wrapped in markdown or other text
