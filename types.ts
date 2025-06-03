@@ -1,6 +1,6 @@
 // Type Definitions
 // Core type definitions for the application
-// Last updated: 2024
+// Last updated: 2025
 
 export interface UserPreferences {
   languages: string;
