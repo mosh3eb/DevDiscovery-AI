@@ -1,6 +1,3 @@
 # Allow all crawlers
 User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://devdiscovery-ai.com/sitemap.xml 
+Allow: / 
