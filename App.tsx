@@ -9,8 +9,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Pagination from './components/Pagination'; 
 import ProjectDetailModal from './components/ProjectDetailModal';
-import { PLATFORM_OPTIONS, CHARACTERISTICS_OPTIONS } from './constants';
-import { CharacteristicOption } from './types';
+import { CHARACTERISTICS_OPTIONS } from './constants';
 
 const BOOKMARKED_PROJECTS_STORAGE_KEY = 'devDiscoveryAIBookmarkedProjects';
 
@@ -88,7 +87,6 @@ const App: React.FC = () => {
 
     try {
       const result: ProjectDiscoveryResult = await fetchPublicProjects(preferences);
-      const totalImplementedPlatforms = PLATFORM_OPTIONS.filter(p => p.isImplemented).length;
       const processedProjects = enrichProjectsWithBookmarkStatus(result.projects);
 
       // Enhanced filtering with more flexible matching

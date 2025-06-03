@@ -15,20 +15,31 @@ const mapAISuggestionToProject = (aiProj: AIProjectSuggestion, index: number): P
   name: aiProj.name || `AI Suggested Project ${index + 1}`,
   description: aiProj.description || 'No description provided by AI.',
   url: aiProj.url || 'N/A',
-  language: aiProj.language || null,
+  language: aiProj.language || 'Unknown',
   tags: aiProj.tags && Array.isArray(aiProj.tags) 
         ? (aiProj.conceptual_difficulty ? [...aiProj.tags, `Difficulty: ${aiProj.conceptual_difficulty}`] : aiProj.tags)
         : (aiProj.conceptual_difficulty ? [`Difficulty: ${aiProj.conceptual_difficulty}`] : []),
   platform: 'AI Suggestion',
-  stars: null,
-  forks: null,
-  updatedAt: null,
-  owner: null,
-  downloads: null,
-  version: null,
+  stars: 0,
+  forks: 0,
+  watchers: 0,
+  openIssues: 0,
+  closedIssues: 0,
+  contributors: 0,
+  commitsLastMonth: 0,
+  issuesLastMonth: 0,
+  pullRequestsLastMonth: 0,
+  owner: undefined,
+  downloads: undefined,
+  recentDownloads: undefined,
+  monthlyDownloads: undefined,
+  versionDownloads: undefined,
+  version: undefined,
+  updatedAt: undefined,
+  isBookmarked: false
 });
 
-export const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platforms'>): Promise<Project[]> => {
+const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platforms'>): Promise<Project[]> => {
   console.log('Checking API key:', {
     hasKey: !!process.env.GEMINI_API_KEY,
     keyLength: process.env.GEMINI_API_KEY?.length,
@@ -187,3 +198,5 @@ export const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 
     throw new Error(`Failed to get AI recommendations: ${message}`);
   }
 };
+
+export { fetchAIRecommendations };

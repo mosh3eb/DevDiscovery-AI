@@ -8,12 +8,12 @@ import { CHARACTERISTICS_OPTIONS } from '../constants';
 import Checkbox from './Checkbox';
 
 interface UserInputFormProps {
-  onSubmit: (preferences: Omit<UserPreferences, 'platforms'>) => void; 
+  onSubmit: (preferences: UserPreferences) => void; 
   isLoading: boolean;
   onFetchAISuggestions: () => void;
   isFetchingAISuggestions: boolean;
   showAIButton: boolean;
-  lastUserPreferences: UserPreferences | null; // Kept for AI button and potential future use
+  lastUserPreferences: UserPreferences | null;
 }
 
 const UserInputForm: React.FC<UserInputFormProps> = ({ 
