@@ -105,7 +105,15 @@ const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platfo
   let geminiApiResponse: GenerateContentResult | undefined;
 
   try {
-    const model = ai.getGenerativeModel({ model: 'gemini-pro' });
+    const model = ai.getGenerativeModel({ 
+      model: 'gemini-1.5-pro-latest',
+      generationConfig: {
+        temperature: 0.7,
+        topK: 40,
+        topP: 0.95,
+        maxOutputTokens: 1024,
+      }
+    });
     geminiApiResponse = await model.generateContent(prompt);
 
     if (!geminiApiResponse) {
