@@ -1,6 +1,6 @@
 // Project Analytics Service
 // This service handles project metrics and analysis
-// Last updated: 2024
+// Last updated: 2025
 
 import { Project, ProjectHealthScore, ProjectComparison } from '../types';
 
