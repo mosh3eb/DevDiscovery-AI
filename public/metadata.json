@@ -1,10 +1,6 @@
 {
-  "title": "DevDiscovery AI - Smart Open Source Project Discovery",
-  "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms. Features smart analysis, advanced filtering, and comprehensive project metrics.",
-  "keywords": "open-source, project-discovery, developer-tools, typescript, react, ai, project-analysis, developer-experience, project-metrics, code-quality, package-manager, github-api, gitlab-api, project-health, developer-productivity",
-  "author": "Mosh3eb",
-  "robots": "index, follow",
-  "language": "en",
-  "viewport": "width=device-width, initial-scale=1",
-  "theme-color": "#1a1a1a"
-} 
+  "name": "DevDiscovery AI",
+  "description": "DevDiscovery AI is an advanced recommendation system that helps you discover open source projects. Utilize its intuitive dashboard to filter by programming languages, topics, and project characteristics to find opportunities perfectly aligned with your skills and interests.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
