@@ -1,0 +1,6 @@
+{
+  "name": "DevDiscovery AI",
+  "description": "DevDiscovery AI is an advanced recommendation system that helps you discover open source projects. Utilize its intuitive dashboard to filter by programming languages, topics, and project characteristics to find opportunities perfectly aligned with your skills and interests.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
