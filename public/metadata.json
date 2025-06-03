@@ -11,19 +11,12 @@
   "og": {
     "type": "website",
     "title": "DevDiscovery AI - Smart Open Source Project Discovery",
-    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms.",
-    "url": "https://devdiscovery-ai.com",
-    "image": "https://devdiscovery-ai.com/og-image.png",
-    "site_name": "DevDiscovery AI",
-    "locale": "en_US"
+    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms."
   },
   "twitter": {
-    "card": "summary_large_image",
-    "site": "@devdiscoveryai",
-    "creator": "@mosh3eb",
+    "card": "summary",
     "title": "DevDiscovery AI - Smart Open Source Project Discovery",
-    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms.",
-    "image": "https://devdiscovery-ai.com/twitter-image.png"
+    "description": "AI-powered platform for discovering and evaluating open-source projects across multiple platforms."
   },
   "icons": {
     "favicon": "/favicon.ico",
