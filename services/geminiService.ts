@@ -106,7 +106,7 @@ const fetchAIRecommendations = async (preferences: Omit<UserPreferences, 'platfo
 
   try {
     const model = ai.getGenerativeModel({ 
-      model: 'gemini-1.5-pro-latest',
+      model: 'gemini-2.0-flash',
       generationConfig: {
         temperature: 0.7,
         topK: 40,
