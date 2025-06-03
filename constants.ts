@@ -1,6 +1,6 @@
 // Application Constants
 // Configuration and constant values
-// Last updated: 2024
+// Last updated: 2025
 
 import { CharacteristicOption, PlatformOption } from './types';
 
