@@ -588,67 +588,6 @@ const fetchCratesIoProjects = async (preferences: Omit<UserPreferences, 'platfor
   return data.crates?.map(mapCratesIoItemToProject) || [];
 };
 
-// --- Maven Central Specific ---
-interface MavenDoc { id: string; g: string; a: string; latestVersion: string; p: string; timestamp: number; ec: string[]; tags: string[]; text: string[]; } 
-interface MavenResponse { numFound: number; start: number; docs: MavenDoc[]; }
-interface MavenResult { response: MavenResponse; }
-const mapMavenItemToProject = (item: MavenDoc): Project => ({
-  name: `${item.g}:${item.a}`, 
-  description: item.tags?.filter(t => t.length < 50).join(', ') || '', 
-  url: `https://mvnrepository.com/artifact/${item.g}/${item.a}/${item.latestVersion}`, 
-  language: "Java", 
-  tags: item.tags || [], 
-  platform: 'Maven Central', 
-  stars: 0, 
-  downloads: undefined,
-  updatedAt: new Date(item.timestamp).toISOString(), 
-  owner: item.g, 
-  version: item.latestVersion,
-  forks: 0,
-  watchers: 0,
-  openIssues: 0,
-  closedIssues: 0,
-  contributors: 0,
-  commitsLastMonth: 0,
-  issuesLastMonth: 0,
-  pullRequestsLastMonth: 0
-});
-
-const escapeSolrQueryTerm = (term: string): string => {
-    const escaped = term.replace(/([+\-&|!(){}\[\]^"~*?:\\\/"])/g, '\\$1');
-    return escaped;
-};
-
-
-const fetchMavenCentralProjects = async (): Promise<Project[]> => {
-  const platform = PLATFORM_OPTIONS.find(p => p.id === 'maven-central')!;
-  let qParts: string[] = [];
-  
-  qParts.push(escapeSolrQueryTerm('java')); // Default to Java since Maven is primarily for Java
-
-  let q = '';
-  if (qParts.length > 0) {
-    q = qParts.map(part => `"${part}"`).join(' AND '); 
-  } else {
-    q = "*:*"; 
-  }
-  
-  const params = new URLSearchParams({ q, rows: MAX_RESULTS_PER_PLATFORM.toString(), wt: 'json' });
-  params.append('sort', 'timestamp desc');
-
-  const url = `${platform.apiUrl}?${params.toString()}`;
-  console.log(`Maven Central Fetch URL: ${url}`);
-  const response = await fetch(url, { mode: 'cors', cache: 'no-cache' });
-  if (!response.ok) {
-      let responseBody = '';
-      try { responseBody = await response.text(); } catch (e) { /* ignore */ }
-      console.error(`Maven Central API Error Response Status ${response.status}: ${responseBody.substring(0, 500)}`);
-      throw { platform: platform.label, message: `API request failed: ${response.statusText || response.status}`, status: response.status } as ApiError;
-  }
-  const data: MavenResult = await response.json();
-  return data.response?.docs?.map(mapMavenItemToProject) || [];
-};
-
 // --- NuGet Specific ---
 interface NuGetDataItem { id: string; version: string; description: string; authors: string[]; projectUrl?: string; iconUrl?: string; tags?: string[]; totalDownloads?: number; }
 interface NuGetResult { totalHits: number; data: NuGetDataItem[]; }
@@ -730,7 +669,6 @@ export const fetchPublicProjects = async (preferences: Omit<UserPreferences, 'pl
     packagist: fetchPackagistProjects,
     rubygems: fetchRubyGemsProjects,
     'crates-io': fetchCratesIoProjects,
-    'maven-central': fetchMavenCentralProjects,
     nuget: fetchNuGetProjects,
     'libraries-io': fetchLibrariesIoProjects,
     'open-hub': fetchOpenHubProjects,

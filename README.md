@@ -77,43 +77,75 @@ A powerful AI-driven platform that helps developers discover and evaluate open-s
 
 ## 🚀 Getting Started
 
-```
-   ╭─────────────────────────────╮
-   │     Quick Start Guide       │
-   ╰─────────────────────────────╯
+### Prerequisites
+- Node.js 18 or higher
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/devdiscovery-ai.git
+cd devdiscovery-ai
 ```
 
-1. Clone the repository
+2. Install dependencies:
 ```bash
-git clone https://github.com/mosh3eb/DevDiscovery-AI.git
-```
-
-2. Install dependencies
-```bash
-cd DevDiscovery-AI
 npm install
 ```
 
-3. Start the development server
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🤝 Contributing
-
-```
-   ╭─────────────────────────────╮
-   │     Join Our Community      │
-   ╰─────────────────────────────╯
+### Building for Production
+```bash
+npm run build
 ```
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+## 🌐 Deployment
+
+### Deploying to Netlify
+
+1. **Push your code to GitHub**
+   - Create a new repository on GitHub
+   - Push your code to the repository
+
+2. **Deploy on Netlify**
+   - Go to [Netlify](https://www.netlify.com/)
+   - Click "New site from Git"
+   - Choose GitHub and select your repository
+   - Configure the build settings:
+     - Build command: `npm run build`
+     - Publish directory: `dist`
+   - Click "Deploy site"
+
+3. **Environment Variables**
+   If your project uses environment variables (like API keys), set them in Netlify:
+   - Go to Site settings > Build & deploy > Environment
+   - Add your environment variables
+
+### Manual Deployment
+1. Build the project:
+```bash
+npm run build
+```
+
+2. The built files will be in the `dist` directory
+
+## 🛠️ Development
+
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
 ## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🌟 Impact
 

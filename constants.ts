@@ -25,7 +25,7 @@ export const PLATFORM_OPTIONS: PlatformOption[] = [
   { id: 'packagist', label: 'Packagist', apiUrl: 'https://packagist.org/search.json', isImplemented: true, type: 'package_registry' },
   { id: 'rubygems', label: 'RubyGems', apiUrl: 'https://rubygems.org/api/v1/search.json', isImplemented: false, type: 'package_registry' },
   { id: 'crates-io', label: 'Crates.io', apiUrl: 'https://crates.io/api/v1/crates', isImplemented: true, type: 'package_registry' },
-  { id: 'maven-central', label: 'Maven Central', apiUrl: 'https://search.maven.org/solrsearch/select', isImplemented: true, type: 'package_registry' },
+  { id: 'maven-central', label: 'Maven Central', apiUrl: 'https://search.maven.org/solrsearch/select', isImplemented: false, type: 'package_registry' },
   { id: 'nuget', label: 'NuGet', apiUrl: 'https://api.nuget.org/v3/query', isImplemented: true, type: 'package_registry' }, 
   { id: 'libraries-io', label: 'Libraries.io', apiUrl: 'https://libraries.io/api', isImplemented: false, type: 'aggregator' }, 
   { id: 'open-hub', label: 'Open Hub', apiUrl: 'https://www.openhub.net', isImplemented: false, type: 'aggregator' }, 
