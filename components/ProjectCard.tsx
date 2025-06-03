@@ -1,6 +1,6 @@
 // Project Card Component
 // Displays project information in a card format
-// Last updated: 2024
+// Last updated: 2025
 
 import React from 'react';
 import { Project } from '../types';
